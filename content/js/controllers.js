@@ -2,11 +2,14 @@
 (function () {
   'use strict';
 
-  var newsApp = angular.module('newsApp.controllers', []);
-
-  newsApp.controller('mainController',
-    ['$scope',
-      function ($scope) {
+  angular.module('newsApp.controllers', ['newsApp.services'])
+    .controller('mainController',
+    ['$scope', 'dylanService',
+      function ($scope, dylanService) {
         $scope.msg = 'Hello, World!';
+        dylanService.getQuotes()
+          .then(function(data) {
+            $scope.instruments = data.GetInstrumentResponse.InstrumentResponses;
+          });
       }]);
 })();

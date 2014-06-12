@@ -8,7 +8,38 @@
 </head>
 <body ng-app="newsApp">
 <div class="container" ng-controller="mainController">
-  {{ msg }}
+
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>High</th>
+      <th>Last</th>
+      <th>Low</th>
+      <th>Net Change</th>
+      <th>Open</th>
+    </tr>
+    <tr ng-repeat="instrument in instruments">
+      <td>
+        {{ instrument.Matches[0].Instrument.CommonName }} ({{ instrument.Matches[0].Instrument.Ticker }})
+      </td>
+      <td>
+        {{ instrument.Matches[0].CompositeTrading.High.Value }}
+      </td>
+      <td>
+        {{ instrument.Matches[0].CompositeTrading.Last.Price.Value }}
+      </td>
+      <td>
+        {{ instrument.Matches[0].CompositeTrading.Low.Value }}
+      </td>
+      <td>
+        {{ instrument.Matches[0].CompositeTrading.NetChange.Value }}
+      </td>
+      <td>
+        {{ instrument.Matches[0].CompositeTrading.Open.Value }}
+      </td>
+    </tr>
+  </table>
+
 </div>
 <script src="/public/angular/angular.js"></script>
 <script src="/public/all.js"></script>
