@@ -16,7 +16,7 @@
             }
           }).
             success(function (data) {
-              deferred.resolve(data);
+              deferred.resolve(data.GetInstrumentResponse.InstrumentResponses);
             }).
             error(function (data) {
               deferred.reject(data);

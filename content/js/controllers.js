@@ -10,13 +10,13 @@
         $scope.msg = 'Hello, World!';
         dylanService.getQuotes('MSFT|US|||,AAPL|US|||')
           .then(function(data) {
-            $scope.instruments = data.GetInstrumentResponse.InstrumentResponses;
+            $scope.instruments = data;
           });
         $scope.addInstrument = function(ticker) {
           dylanService.getQuotes(ticker + '|US|||')
             .then(function(data) {
-              console.log(data.GetInstrumentResponse.InstrumentResponses[0]);
-              $scope.instruments.push(data.GetInstrumentResponse.InstrumentResponses[0]);
+              console.log(data[0]);
+              $scope.instruments.push(data[0]);
             });
         };
         $scope.ticker = '';
