@@ -2,6 +2,6 @@
 (function () {
   'use strict';
 
-  angular.module('newsApp', ['newsApp.controllers']);
+  angular.module('newsApp', ['newsApp.controllers','newsApp.directives']);
 
 })();
