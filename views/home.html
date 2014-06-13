@@ -26,19 +26,19 @@
         {{ instrument.Matches[0].Instrument.CommonName }} ({{ instrument.Matches[0].Instrument.Ticker }})
       </td>
       <td>
-        {{ instrument.Matches[0].CompositeTrading.High.Value }}
+        <display-trade obj="instrument.Matches[0].CompositeTrading.High"></display-trade>
       </td>
       <td>
-        {{ instrument.Matches[0].CompositeTrading.Last.Price.Value }}
+        <display-trade obj="instrument.Matches[0].CompositeTrading.Last.Price"></display-trade>
       </td>
       <td>
-        {{ instrument.Matches[0].CompositeTrading.Low.Value }}
+        <display-trade obj="instrument.Matches[0].CompositeTrading.Low"></display-trade>
       </td>
       <td>
-        {{ instrument.Matches[0].CompositeTrading.NetChange.Value }}
+        <display-trade obj="instrument.Matches[0].CompositeTrading.NetChange"></display-trade>
       </td>
       <td>
-        {{ instrument.Matches[0].CompositeTrading.Open.Value }}
+        <display-trade obj="instrument.Matches[0].CompositeTrading.Open"></display-trade>
       </td>
     </tr>
   </table>

@@ -17,6 +17,15 @@
       return function(scope, element) {
         element[0].focus();
       };
+    })
+    .directive('displayTrade', function() {
+      return {
+        restrict: 'E',
+        scope: {
+          obj: '='
+        },
+        template: '<div>{{ obj.Value | isoCurrency:obj.Iso }}</div>'
+      };
     });
 
 })();

@@ -9,20 +9,21 @@
         $scope.instruments = [];
         $scope.msg = 'Hello, World!';
         dylanService.getQuotes('MSFT|US|||,AAPL|US|||')
-          .then(function(data) {
+          .then(function (data) {
             $scope.instruments = data;
           });
-        $scope.addInstrument = function(ticker) {
+        $scope.addInstrument = function (ticker) {
           dylanService.getQuotes(ticker + '|US|||')
-            .then(function(data) {
+            .then(function (data) {
               console.log(data[0]);
               $scope.instruments.push(data[0]);
             });
         };
         $scope.ticker = '';
-        $scope.addTicker = function() {
+        $scope.addTicker = function () {
           $scope.addInstrument($scope.ticker);
           $scope.ticker = '';
         };
       }]);
+
 })();
